@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - TechEve</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('img/background.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            position: relative;
+        }
+        body::before {
+            content: "";
+            background-color: rgba(0, 0, 0, 0.6); 
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+        header, nav, footer {
+            background-color: rgba(239, 244, 238, 0.8);
+            padding: 10px;
+            text-align: center;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header img {
+            max-height: 60px;
+        }
+        header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2em;
+            flex: 1;
+            text-align: center;
+            margin: 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #000;
+        }
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+        }
+        .content h1, .content p {
+            color: #fff;
+        }
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        .form-container label {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        .form-container input, .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .form-container textarea {
+            resize: vertical;
+        }
+        .form-container input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .form-container input[type="submit"]:hover {
+            background-color: #555;
+        }
+        footer {
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="img/logo.jpg" alt="Event Logo">
+        <h1>TechEve</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="registration.html">Registration Form</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="calculator.html">Fee Calculator</a>
+    </nav>
+    <div class="content">
+        <h1>Contact Us</h1>
+        <div class="form-container">
+            <form action="#" method="post">
+                <label for="name">Name:
+                    <input type="text" id="name" name="name" required>
+                </label>
+                <label for="email">Email:
+                    <input type="email" id="email" name="email" required>
+                </label>
+                <label for="message">Message:
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </label>
+                <input type="submit" value="Send Message">
+            </form>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 University Technical Event. All rights reserved.</p>
+    </footer>
+</body>
+</html>

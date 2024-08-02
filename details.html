@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Details - TechEve</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('img/background.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            position: relative;
+        }
+        body::before {
+            content: "";
+            background-color: rgba(0, 0, 0, 0.6); 
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+        header, nav, footer {
+            background-color: rgba(239, 244, 238, 0.8);
+            padding: 10px;
+            text-align: center;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header img {
+            max-height: 60px;
+        }
+        header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2em;
+            flex: 1;
+            text-align: center;
+            margin: 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 40px; /* Increased gap for spreading out the links */
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #000;
+        }
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+        }
+        .content h1, .content p {
+            color: #fff;
+        }
+        .info-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+            margin: auto;
+            text-align: left;
+        }
+        .info-container p {
+            margin: 10px 0;
+        }
+        .info-container a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .info-container a:hover {
+            background-color: #fff;
+            color: #000;
+        }
+        footer {
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="img/logo.jpg" alt="Event Logo">
+        <h1>TechEve</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="registration.html">Registration Form</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="calculator.html">Fee Calculator</a>
+    </nav>
+    <div class="content">
+        <h1>Registration Details</h1>
+        <div class="info-container">
+            <p><strong>Name:</strong> <span id="name">N/A</span></p>
+            <p><strong>Email:</strong> <span id="email">N/A</span></p>
+            <p><strong>Phone Number:</strong> <span id="phone">N/A</span></p>
+            <p><strong>Department:</strong> <span id="department">N/A</span></p>
+            <p><strong>Participant Type:</strong> <span id="participantType">N/A</span></p>
+            <p><strong>Number of Participants:</strong> <span id="numParticipants">N/A</span></p>
+            <p><strong>Type of Event:</strong> <span id="eventType">N/A</span></p>
+            <p><strong>Calculated Fee:</strong> <span id="calculatedFee">N/A Rupees</span></p>
+            <a href="registration.html">Back to Registration Form</a>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 University Technical Event. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function getParameterByName(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        document.getElementById('name').textContent = getParameterByName('name') || 'N/A';
+        document.getElementById('email').textContent = getParameterByName('email') || 'N/A';
+        document.getElementById('phone').textContent = getParameterByName('phone') || 'N/A';
+        document.getElementById('department').textContent = getParameterByName('department') || 'N/A';
+        document.getElementById('participantType').textContent = getParameterByName('participant') || 'N/A';
+        document.getElementById('numParticipants').textContent = getParameterByName('numParticipants') || 'N/A';
+        document.getElementById('eventType').textContent = getParameterByName('eventType') || 'N/A';
+        document.getElementById('calculatedFee').textContent = (getParameterByName('calculatedFee') || 'N/A') + ' Rupees';
+    </script>
+</body>
+</html>
